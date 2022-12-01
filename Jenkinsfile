@@ -8,10 +8,10 @@ pipeline{
         stage('1.SCM Clone') {
             steps {
                 sh 'echo Starting Git clone'
-                sh 'echo ${PWD}'
-                sh 'ls -al ${PWD}'
+                //sh 'echo ${PWD}'
+                //sh 'ls -al ${PWD}'
                 git branch: 'main', url: 'https://github.com/owseaman/dpc'
-                sh 'ls -al ${PWD}'
+                //sh 'ls -al ${PWD}'
             }
         }
         
@@ -41,8 +41,8 @@ pipeline{
         
         stage('5. Docker Image Build') {
             steps {
-                sh 'echo ${PWD}'
-                sh 'ls -a ${PWD}'
+                //sh 'echo ${PWD}'
+                //sh 'ls -a ${PWD}'
                 sh 'docker build -t owseaman/dpc .'
 		//If you get an error in this "Docker Image Build" section, uncomment the next line
 		//sh 'sudo chmod 666 /var/run/docker.sock'
@@ -64,8 +64,8 @@ pipeline{
         
         stage('7. Remove Container Images') {
             steps {
-                sh 'echo ${PWD}'
-                sh 'ls -a ${PWD}'
+                //sh 'echo ${PWD}'
+                //sh 'ls -a ${PWD}'
 		sh 'echo gotta save some space in the instance'    
                 sh 'docker rmi $(docker images -q)'
             }
@@ -73,8 +73,8 @@ pipeline{
         
         stage('8. K8s Deployment') {
 			steps {
-			    sh 'echo ${PWD}'
-			    sh 'ls -al ${PWD}'
+			    //sh 'echo ${PWD}'
+			    //sh 'ls -al ${PWD}'
 			    
 			    sh 'kubectl apply -f dpc-web-app.yml'
 			}	

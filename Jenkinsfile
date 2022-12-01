@@ -66,7 +66,7 @@ pipeline{
         
         stage('8. K8s Deployment') {
 			steps {
-			    sh 'kubectl apply -f maven-web-app.yml'
+			    sh 'kubectl apply -f dpc-web-app.yml'
 			}	
         }
         

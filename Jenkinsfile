@@ -8,7 +8,7 @@ pipeline{
         stage('1.SCM Clone') {
             steps {
                 sh 'echo Starting Git clone'
-                git credentialsId: 'Github-Cred', url: 'https://github.com/owseaman/maven-web-app.git'
+                git credentialsId: 'Github-Cred', url: 'https://github.com/owseaman/dpc.git'
             }
         }
         

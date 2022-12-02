@@ -43,7 +43,7 @@ pipeline{
             steps {
                 //sh 'echo ${PWD}'
                 //sh 'ls -a ${PWD}'
-                sh 'docker build -t owseaman/dpc .'
+                sh 'docker build -t owseaman/dpc:latest .'
 		//If you get an error in this "Docker Image Build" section, uncomment the next line
 		//sh 'sudo chmod 666 /var/run/docker.sock'
             }
